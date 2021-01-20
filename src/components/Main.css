@@ -1,0 +1,30 @@
+#navbar {
+    background-color: transparent;
+    padding-bottom: 0px;
+    padding-left: 25px;
+}
+
+#choose-file {
+    display: none;
+}
+
+#colorsExistHeader {
+    text-align: left;
+    padding-left: 15px;
+    font-size: 30px;
+}
+
+#hexCard {
+   margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+#uploadBtn, #goBtn {
+    background-color: transparent;
+    color: black;
+    /* border: none; */
+    border-radius: 50px;
+    margin: 5px;
+}
