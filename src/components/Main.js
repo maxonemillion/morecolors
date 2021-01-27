@@ -70,11 +70,11 @@ const Main = () => {
             </Button>
             <br></br>
             { colorized ? <h1 id="colorsExistHeader">colors</h1> : ""}
-            {colorized?.map((color) => {
+            {colorized?.map((color, index) => {
                 return (
                     <div>
 
-                        <Card id="hexCard" style={{ backgroundColor: color }}>
+                        <Card id="hexCard" style={{ backgroundColor: color, color: comp ? comp[index] : ""}}>
                             <Card.Body>
                                 {color}
                                
@@ -85,11 +85,11 @@ const Main = () => {
                 )
             })}
             { comp ? <h1 id="compExistHeader">complimentary</h1> : ""}
-            {comp?.map((color) => {
+            {comp?.map((color, index) => {
                 return (
                     <div>
 
-                        <Card id="compCard" style={{ backgroundColor: color }}>
+                        <Card id="compCard" style={{ backgroundColor: color, color: colorized[index] }}>
                             <Card.Body>
                                 {color}
                             </Card.Body>
