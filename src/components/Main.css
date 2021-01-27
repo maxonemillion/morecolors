@@ -93,13 +93,21 @@ div {
   }
   }
 
-
-#uploadBtn, #goBtn {
+#goBtn {
     background-color: transparent;
     color: black;
     border-radius: 50px;
-    margin: 5px;
+    margin-bottom: 100px;
+    position: relative;
+}
 
+#uploadBtn {
+    background-color: transparent;
+    color: black;
+    border-radius: 50px;
+    margin-top: 180px;
+    margin-bottom: 5px;
+    position: relative;
 }
 
 #uploadBtn.display, #goBtn.display {
