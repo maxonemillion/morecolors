@@ -9,7 +9,7 @@ const Main = () => {
     const [file, setFile] = useState(null)
     const [colorized, setColorized] = useState()
     const [comp, setComp] = useState();
-    const [array, setArray] = useState();
+    const [display, setDisplay] = useState(false);
 
 
     useEffect(() => {
@@ -43,6 +43,7 @@ const Main = () => {
     }
 
     const colorize = () => {
+        setDisplay(!display)
         getColors(file).then(colors => {
             setColorized(colors.map(color => color.hex()))
         })
@@ -56,20 +57,26 @@ const Main = () => {
             {/* ${colorized[0]}, ${colorized[1]}, ${colorized[2]}, ${colorized[3]}, ${colorized[4]} */}
             <Navbar id="navbar">
                 <Navbar.Brand href="/">
-                    <p>monkë</p>
+                    <p className={display ? "display" : null}>monkë</p>
                 </Navbar.Brand>
             </Navbar>
             <br></br>
-            <Button variant="dark" id="uploadBtn" onClick={chooseFile}>
+            <Button variant="dark" id="uploadBtn" onClick={chooseFile} className={display ? "display" : null}>
                 <h7>upload</h7>
             </Button>
             <br></br>
             <input type="file" id="choose-file" ref={hiddenInput} onChange={handleChange}></input>
-            <Button variant="dark" id="goBtn" onClick={() => colorize()}>
+            { file ? 
+            <Button variant="dark" id="goBtn" onClick={() => colorize()} className={display ? "display" : null}>
                 <h7>go</h7>
             </Button>
+                : 
+                <Button variant="dark" id="goBtn">
+                <h7>go</h7>
+            </Button>
+            }
             <br></br>
-            { colorized ? <h1 id="colorsExistHeader">colors</h1> : ""}
+            { colorized ? <h1 id="colorsExistHeader" className={display ? "display" : null}>colors</h1> : ""}
             {colorized?.map((color, index) => {
                 return (
                     <div>
@@ -84,7 +91,7 @@ const Main = () => {
                     </div>
                 )
             })}
-            { comp ? <h1 id="compExistHeader">complimentary</h1> : ""}
+            { comp ? <h1 id="compExistHeader" className={display ? "display" : null}>complimentary</h1> : ""}
             {comp?.map((color, index) => {
                 return (
                     <div>
