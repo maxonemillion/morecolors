@@ -19,7 +19,21 @@
     margin-right: 10px;
     border-radius: 10px;
     margin-bottom: 5px;
+    padding: 10px;
 }
+#compCard {
+   margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.mainDiv:last-child {
+    padding-bottom: 1.5em;
+}
+
+
 
 #uploadBtn, #goBtn {
     background-color: transparent;
