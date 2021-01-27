@@ -8,10 +8,14 @@
     display: none;
 }
 
-#colorsExistHeader {
+#colorsExistHeader,#compExistHeader {
     text-align: left;
     padding-left: 15px;
     font-size: 30px;
+}
+
+#compExistHeader{
+    margin-top: 30px;
 }
 
 #hexCard {
@@ -33,12 +37,53 @@
     padding-bottom: 1.5em;
 }
 
+div {
+    background-size: 400% 400%;
+  -webkit-animation: Gradient 30s ease infinite;
+  -moz-animation: Gradient 30s ease infinite;
+  animation: Gradient 30s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+    0% {
+    background-position: 0% 50%
+    }
+  50% {
+  background-position: 100% 50%
+  }
+  100% {
+  background-position: 0% 50%
+  }
+  }
+  
+  @-moz-keyframes Gradient {
+    0% {
+    background-position: 0% 50%
+    }
+  50% {
+  background-position: 100% 50%
+  }
+  100% {
+  background-position: 0% 50%
+  }
+  }
+  
+  @keyframes Gradient {
+    0% {
+    background-position: 0% 50%
+    }
+  50% {
+  background-position: 100% 50%
+  }
+  100% {
+  background-position: 0% 50%
+  }
+  }
 
 
 #uploadBtn, #goBtn {
     background-color: transparent;
     color: black;
-    /* border: none; */
     border-radius: 50px;
     margin: 5px;
 }

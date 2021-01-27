@@ -52,16 +52,22 @@ const Main = () => {
 
 
     return (
-        <div style={{ backgroundImage: colorized ? `linear-gradient(${colorized[0]}, ${colorized[1]}, ${colorized[2]}, ${colorized[3]}, ${colorized[4]})` : ""}} className="mainDiv">
+        <div style={{ backgroundImage: comp ? `linear-gradient(80deg,${colorized[0]}, ${colorized[1]}, ${colorized[2]}, ${colorized[3]}, ${colorized[4]}, ${comp[0]}, ${comp[1]}, ${comp[2]}, ${comp[3]}, ${comp[4]})` : ""}} className="mainDiv">
             {/* ${colorized[0]}, ${colorized[1]}, ${colorized[2]}, ${colorized[3]}, ${colorized[4]} */}
             <Navbar id="navbar">
-                <Navbar.Brand href="/">monkë</Navbar.Brand>
+                <Navbar.Brand href="/">
+                    <p>monkë</p>
+                </Navbar.Brand>
             </Navbar>
             <br></br>
-            <Button variant="dark" id="uploadBtn" onClick={chooseFile}>upload</Button>
+            <Button variant="dark" id="uploadBtn" onClick={chooseFile}>
+                <h7>upload</h7>
+            </Button>
             <br></br>
             <input type="file" id="choose-file" ref={hiddenInput} onChange={handleChange}></input>
-            <Button variant="dark" id="goBtn" onClick={() => colorize()}>go</Button>
+            <Button variant="dark" id="goBtn" onClick={() => colorize()}>
+                <h7>go</h7>
+            </Button>
             <br></br>
             { colorized ? <h1 id="colorsExistHeader">colors</h1> : ""}
             {colorized?.map((color) => {
@@ -78,7 +84,7 @@ const Main = () => {
                     </div>
                 )
             })}
-            { comp ? <h1 id="colorsExistHeader">complimentary</h1> : ""}
+            { comp ? <h1 id="compExistHeader">complimentary</h1> : ""}
             {comp?.map((color) => {
                 return (
                     <div>
