@@ -43,7 +43,9 @@ const Main = () => {
     }
 
     const colorize = () => {
-        setDisplay(!display)
+        if (file) {
+            setDisplay(true)
+        }
         getColors(file).then(colors => {
             setColorized(colors.map(color => color.hex()))
         })
