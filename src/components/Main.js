@@ -56,7 +56,6 @@ const Main = () => {
 
     return (
         <div style={{ backgroundImage: comp ? `linear-gradient(80deg,${colorized[0]}, ${colorized[1]}, ${colorized[2]}, ${colorized[3]}, ${colorized[4]}, ${comp[0]}, ${comp[1]}, ${comp[2]}, ${comp[3]}, ${comp[4]})` : ""}} className="mainDiv">
-            {/* ${colorized[0]}, ${colorized[1]}, ${colorized[2]}, ${colorized[3]}, ${colorized[4]} */}
             <Navbar id="navbar">
                 <Navbar.Brand href="/">
                     <p className={display ? "display" : null}>monkë</p>
@@ -86,7 +85,6 @@ const Main = () => {
                         <Card id="hexCard" style={{ backgroundColor: color, color: comp ? comp[index] : ""}}>
                             <Card.Body>
                                 {color}
-                               
                             </Card.Body>
                         </Card>
 
