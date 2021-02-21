@@ -35,11 +35,17 @@ const Main = () => {
 
 
     const handleChange = (event) => {
+        if (event.target.files.length === 1) {
+            const uploadedFile = URL.createObjectURL(event.target?.files[0])
+            setFile(uploadedFile);
+    
+            console.log(event)
+        } else {
+            console.log("FIXED", event.target.files.length)
+        }
+        
+        
 
-        const uploadedFile = URL.createObjectURL(event.target?.files[0])
-        setFile(uploadedFile);
-
-        console.log(event)
 
     }
 
@@ -52,19 +58,19 @@ const Main = () => {
         })
     }
 
-    const saveScheme = () => {
-        html2canvas(document.body).then(function(canvas) {
-            document.body.appendChild(canvas);
-            console.log(canvas)
-        });
-    }
+    // const saveScheme = () => {
+    //     html2canvas(document.body).then(function(canvas) {
+    //         document.body.appendChild(canvas);
+    //         console.log(canvas)
+    //     });
+    // }
 
 
     return (
         <div style={{ backgroundImage: comp ? `linear-gradient(80deg,${colorized[0]}, ${colorized[1]}, ${colorized[2]}, ${colorized[3]}, ${colorized[4]}, ${comp[0]}, ${comp[1]}, ${comp[2]}, ${comp[3]}, ${comp[4]})` : ""}} className="mainDiv">
             <Navbar id="navbar">
                 <Navbar.Brand href="/">
-                    <p className={display ? "display" : null}>MXNMLLN</p>
+                    <p>MXNMLLN</p>
                 </Navbar.Brand>
             </Navbar>
             <br></br>
