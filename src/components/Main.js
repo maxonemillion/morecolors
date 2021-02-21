@@ -66,7 +66,6 @@ const Main = () => {
                 <Navbar.Brand href="/">
                     <p className={display ? "display" : null}>MXNMLLN</p>
                 </Navbar.Brand>
-                <Button onClick={saveScheme}>save</Button>
             </Navbar>
             <br></br>
             <Button variant="dark" id="uploadBtn" onClick={chooseFile} className={display ? "display" : null}>
