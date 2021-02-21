@@ -4,6 +4,7 @@ import "./Main.css"
 import getColors from "get-image-colors";
 import hexToHsl from "hex-to-hsl";
 import hslToHex from "hsl-to-hex"
+import html2canvas from "html2canvas";
 
 const Main = () => {
     const [file, setFile] = useState(null)
@@ -51,15 +52,21 @@ const Main = () => {
         })
     }
 
-    console.log(comp, colorized)
+    const saveScheme = () => {
+        html2canvas(document.body).then(function(canvas) {
+            document.body.appendChild(canvas);
+            console.log(canvas)
+        });
+    }
 
 
     return (
         <div style={{ backgroundImage: comp ? `linear-gradient(80deg,${colorized[0]}, ${colorized[1]}, ${colorized[2]}, ${colorized[3]}, ${colorized[4]}, ${comp[0]}, ${comp[1]}, ${comp[2]}, ${comp[3]}, ${comp[4]})` : ""}} className="mainDiv">
             <Navbar id="navbar">
                 <Navbar.Brand href="/">
-                    <p className={display ? "display" : null}>monkë</p>
+                    <p className={display ? "display" : null}>MXNMLLN</p>
                 </Navbar.Brand>
+                <Button onClick={saveScheme}>save</Button>
             </Navbar>
             <br></br>
             <Button variant="dark" id="uploadBtn" onClick={chooseFile} className={display ? "display" : null}>

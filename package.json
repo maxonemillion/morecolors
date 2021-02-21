@@ -10,6 +10,7 @@
     "get-image-colors": "^4.0.0",
     "hex-to-hsl": "^1.0.2",
     "hsl-to-hex": "^1.0.0",
+    "html2canvas": "^1.0.0-rc.7",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
